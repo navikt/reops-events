@@ -45,8 +45,8 @@
             app,
             environment,
             event_name: eventName,
+            ...urlData,
             payload: {
-                ...urlData,
                 ...additionalData,
             },
         };
