@@ -32,19 +32,19 @@
 
     // URL-related data to be included in payload
     const urlData = {
-        url_host: hostname,
-        url_path: pathname,
-        url_query: includeQuery ? search : "",
+        nettside: hostname,
+        url_sti: pathname,
+        url_parametre: includeQuery ? search : "",
     };
 
     const sendEvent = (eventName, additionalData = {}) => {
         if (!eventName) return;
 
         const eventPayload = {
-            team,
-            app,
-            environment,
-            event_name: eventName,
+            app_eier: team,
+            app_navn: app,
+            app_miljo: environment,
+            hendelse_navn: eventName,
             ...urlData,
             payload: {
                 ...additionalData,
@@ -65,7 +65,7 @@
     // Example: Auto-track page views - disabled by default, enabled only if explicitly set to "true"
     const autoTrackPageViews = getAttribute("data-ping-track-pageviews") === "true";
     if (autoTrackPageViews) {
-        sendEvent("pageview");
+        sendEvent("sidevisning");
     }
 
     // Expose a global tracking function
