@@ -32,7 +32,7 @@
 
     // URL-related data to be included in payload
     const urlData = {
-        nettside: hostname,
+        url_domene: hostname,
         url_sti: pathname,
         url_parametre: includeQuery ? search : "",
     };
